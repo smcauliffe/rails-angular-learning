@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="nav">
+  <%= link_to 'Home', users_path %>
+  <% unless current_path == 'users/new' %>
+    | <%= link_to 'Create New User', new_user_path %>
+  <% end %>
+</div>
 <%= yield %>
 
 </body>
